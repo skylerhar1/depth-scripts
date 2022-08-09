@@ -34,4 +34,5 @@ depth.average.plot <- ggplot(depth.average, aes(x=window.end, y=coverage, colour
   scale_x_continuous(name="Genomic Position (bp)", limits=c(0,num_rows ),labels = scales::comma,breaks = scales::pretty_breaks(n = 20)) +
   scale_y_continuous(name="Average Coverage Depth", limits=c(0,300))+
   ggtitle(iso_id, subtitle = island)
-ggsave(paste(iso_id,".png"), width = 180000, height = 800, units = "px",limitsize = FALSE)
+plot_name <- gsub(" ","",paste("png_directory/",iso_id,".png"))
+ggsave(plot_name, width = 18000, height = 800, units = "px",limitsize = FALSE)
